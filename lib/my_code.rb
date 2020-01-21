@@ -32,45 +32,46 @@ def map_to_square(source_array)
   square_array = []
   i = 0 
   while i < source_array.length do
-    square_array << (source_array[i] ** 2)
+    square_array << source_array[i] ** 2
     i+=1 
   end 
   square_array
 end 
 
-def reduce_to_total(source_array, starting_point = 0)
-  i = 0 
-  while i < source_array.length do 
-    starting_point += source_array[i]
-    i+=1 
-  end 
-  total = starting_point
-  total 
-end
 
-def reduce_to_all_true(source_array)
-  all_true = true 
-  i=0 
-  while i < source_array.length do
-    if !source_array[i]
-      all_true = false 
-    end 
-    i+=1 
-  end 
-  all_true
-end 
 
-def reduce_to_any_true(source_array)
-  any_true = false 
-  i = 0 
-  while i < source_array.length do 
-    if source_array[i]
-      return any_true = true
-    end
-    i+=1 
-  end 
-  any_true
-end 
+# def reduce_to_total(source_array, starting_point = 0)
+#   i = 0 
+#   while i < source_array.length do 
+#     starting_point += source_array[i]
+#     i+=1 
+#   end 
+#   total = starting_point
+# end
+
+# def reduce_to_all_true(source_array)
+#   all_true = true 
+#   i=0 
+#   while i < source_array.length do
+#     if !source_array[i]
+#       all_true = false 
+#     end 
+#     i+=1 
+#   end 
+#   all_true
+# end 
+
+# def reduce_to_any_true(source_array)
+#   any_true = false 
+#   i = 0 
+#   while i < source_array.length do 
+#     if source_array[i]
+#       return any_true = true
+#     end
+#     i+=1 
+#   end 
+#   any_true
+# end 
 
 
 
@@ -114,38 +115,38 @@ end
 #   sq_array
 # end
 
-# def reduce_to_total(source_array, starting_point = 0)
-#   acc = starting_point
-#   i = 0 
-#   while i < source_array.length do 
-#     next_val = source_array[i]
-#     acc = acc + next_val
-#     i+=1
-#   end 
-#   acc
-# end
+def reduce_to_total(source_array, starting_point = 0)
+  acc = starting_point
+  i = 0 
+  while i < source_array.length do 
+    next_val = source_array[i]
+    acc += next_val
+    i+=1
+  end 
+  acc
+end
 
-# def reduce_to_all_true(source_array)
-#   acc = true 
-#   i = 0 
-#   while i < source_array.length do 
-#     next_val = source_array[i]
-#     acc = acc && !!next_val
-#     i+=1 
-#   end 
-#   acc
-# end
+def reduce_to_all_true(source_array)
+  acc = true 
+  i = 0 
+  while i < source_array.length do 
+    next_val = source_array[i]
+    acc = acc && !!next_val
+    i+=1 
+  end 
+  acc
+end
 
-# def reduce_to_any_true(source_array)
-#   acc = false 
-#   i = 0 
-#   while i < source_array.length do 
-#     next_val = source_array[i]
-#     acc = acc || !!next_val
-#     i += 1 
-#   end 
-#   acc
-# end
+def reduce_to_any_true(source_array)
+  acc = false 
+  i = 0 
+  while i < source_array.length do 
+    next_val = source_array[i]
+    acc = acc || !!next_val
+    i += 1 
+  end 
+  acc
+end
 
 
 
